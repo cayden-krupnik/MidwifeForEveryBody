@@ -1,54 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
 :root {
     --primaryColor: #5a6c48;
     --secondaryColor: #dcbc97;
     --tertiaryColor: #fefdfe;
+    --titleFont: "Libre Baskerville";
+    --bodyFont: "EB Garamond";
 }
+
 * {
+    font-family: var(--bodyFont);
     margin: 0;
 }
+
 .header {
     display: flex;
     position: sticky;
     width: 100%;
+    height: 110px;
     top: 0;
     left: 0;
     z-index: 1000;
-    color: var(--primaryColor);
     background-color: var(--tertiaryColor);
-    height: 115px;
     align-items: center;
+    box-shadow: 0px 1px 10px gray;
 }
-.header > img {
+.header > a {
     position: absolute;
+    left: 15%;
+    height: 95%;
     cursor: pointer;
-    width: 110px;
-    height: 110px;
+}
+.header > a > img {
+    width: 100%;
+    height: 100%;
 }
 .header > ul {
+    font-family: var(--titleFont);
+    font-weight: 400;
+    font-size: 25px;
     width: 100%;
     text-align: center;
     padding: 0;
 }
 .header > ul > li {
-    display: inline;
-    padding: 10px;
+    position: relative;
+    display: inline-flex;
     margin: 0px 15px;
     cursor: pointer;
 }
-
-body {
-    size: 100%;
-    background-color: var(--tertiaryColor);
+.header > ul > li.page::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: var(--primaryColor);
+    transition: ease .1s;
 }
+.header > ul > li.page:hover::after {
+    transform: scaleX(1);
+}
+.header > ul > li > a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+.header > ul > li.cta {
+    position: absolute;
+    right: 15%;
+    background-color: var(--primaryColor);
+    border-radius: .5em;
+    transition: ease .1s;
+}
+.header > ul > li.cta:hover {
+    background-color: var(--secondaryColor);
+}
+.header > ul > li.cta > a {
+    color: var(--tertiaryColor);
+}
+
 div.hero_photo {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 70vh;
-    background-color: var(--primaryColor);
+    background-color: var(--secondaryColor);
 }
-body > p {
-    color: var(--secondaryColor);
+div.hero_photo > h1 {
+    position: absolute;
+    z-index: 100;
+    width: 40%;
+    top: 25%;
+    left: 15%;
+    overflow-wrap: normal;
+    color: var(--primaryColor);
+    font-size: 100px;
 }
-footer {
+div.hero_photo > img {
+    position: absolute;
+    top: -50%;
+    right: -40%;
+    mask-image: radial-gradient(black 60%, transparent 40%);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: -1100px 0px; /* use to reposition hero photo */
+}
+
+.footer {
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 50px 0;
     color: var(--tertiaryColor);
     background-color: var(--primaryColor);
+}
+.footer > div {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.footer > div > p {
+    font-weight: bold;
+    font-size: 20px;
+}
+.footer > div > img {
+    width: 30%;
+}
+.footer > div > ul {
+    list-style-type: none;
+}
+.footer > div.site_map > ul > li {
+    position: relative;
+    cursor: pointer;
+}
+.footer > div.site_map > ul > li > a {
+    color: var(--tertiaryColor);
+    text-decoration: none;
 }
