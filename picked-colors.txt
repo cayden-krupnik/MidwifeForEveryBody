@@ -1,0 +1,3 @@
+--primaryColor: #5a6c48;
+--secondaryColor: #dcbc97;
+--tertiaryColor: #fefdfe;

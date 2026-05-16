@@ -1,0 +1,54 @@
+:root {
+    --primaryColor: #5a6c48;
+    --secondaryColor: #dcbc97;
+    --tertiaryColor: #fefdfe;
+}
+* {
+    margin: 0;
+}
+.header {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    color: var(--primaryColor);
+    background-color: var(--tertiaryColor);
+    height: 115px;
+    align-items: center;
+}
+.header > img {
+    position: absolute;
+    cursor: pointer;
+    width: 110px;
+    height: 110px;
+}
+.header > ul {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+.header > ul > li {
+    display: inline;
+    padding: 10px;
+    margin: 0px 15px;
+    cursor: pointer;
+}
+
+body {
+    size: 100%;
+    background-color: var(--tertiaryColor);
+}
+div.hero_photo {
+    width: 100%;
+    height: 70vh;
+    background-color: var(--primaryColor);
+}
+body > p {
+    color: var(--secondaryColor);
+}
+footer {
+    color: var(--tertiaryColor);
+    background-color: var(--primaryColor);
+}
