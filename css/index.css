@@ -1,3 +1,6 @@
+@import url(style.css);
+
+/* Hero photo settings */
 div.hero_photo {
     position: relative;
     overflow: hidden;
